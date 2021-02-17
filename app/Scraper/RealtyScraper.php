@@ -20,7 +20,7 @@ class RealtyScraper
     {
         $client = new Client();
         $crawler = $client->request('GET', $url);
-
+        dd($crawler);
         $links = $crawler
             ->filter(".content-items .ct_title a")->each(function ($node) {
             return "https://alonhadat.com.vn" . $node->attr('href');

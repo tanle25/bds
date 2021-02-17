@@ -20,6 +20,7 @@
         "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.0",
         "qoraiche/laravel-mail-editor": "^3.2",
+        "spatie/crawler": "^6.0",
         "spatie/laravel-activitylog": "^3.16",
         "spatie/laravel-query-builder": "^3.3",
         "spatie/laravel-tags": "^2.0",

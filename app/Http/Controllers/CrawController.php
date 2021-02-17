@@ -81,20 +81,20 @@ class CrawController extends Controller
     {
         $string_now = Carbon::now()->format('d/m/Y');
 
-        $request->validate([
-            'link' => "required",
-            'province' => 'required|numeric',
-            'district' => 'required|numeric',
-            'commune' => 'required|numeric',
+        // $request->validate([
+        //     'link' => "required",
+        //     'province' => 'required|numeric',
+        //     'district' => 'required|numeric',
+        //     'commune' => 'required|numeric',
 
-            'contact_name' => 'required|string|max:256',
-            'contact_phone_number' => 'required|string|max:30',
-            'contact_email' => 'required|email|string|max:30',
-            'contact_address' => 'max:300',
+        //     'contact_name' => 'required|string|max:256',
+        //     'contact_phone_number' => 'required|string|max:30',
+        //     'contact_email' => 'required|email|string|max:30',
+        //     'contact_address' => 'max:300',
 
-            'close_at' => 'date_format:d/m/Y|after:open_at',
-            'open_at' => 'date_format:d/m/Y|after:' . $string_now,
-        ]);
+        //     'close_at' => 'date_format:d/m/Y|after:open_at',
+        //     'open_at' => 'date_format:d/m/Y|after:' . $string_now,
+        // ]);
 
         $new_realty = [
             'province_code' => $request->province,

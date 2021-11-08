@@ -1,6 +1,6 @@
 <!-- Main Sidebar Container -->
 @php
-    $logo = Str::replaceLast(',', '', $theme_options['logo']);
+    $logo = Str::replaceLast(',', '', $theme_options['logo'] ?? '');
 @endphp
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">

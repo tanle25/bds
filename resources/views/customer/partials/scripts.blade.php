@@ -65,6 +65,7 @@
         levelTitleAsBack: true,
         labelClose: false,
     });
+
     console.log(Nav);
     $('.mobile-logout-btn').on('click', function(){
         Nav.close();

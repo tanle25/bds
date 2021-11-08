@@ -17,6 +17,7 @@ use App\Http\Controllers\Customer\RealtyPostController;
 use App\Http\Controllers\Customer\RealtyTagController;
 use App\Http\Controllers\Image\ImageUploadController;
 use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,6 +64,16 @@ Route::get('get-district-of-province/{province_code}', [ProvinceController::clas
 Route::get('get-commune-of-district/{district_code}', [ProvinceController::class, 'getCommunesByDistrict'])->name('customer.province.get_commune');
 Route::get('get-project-of-district/{district_code}', [ProvinceController::class, 'getProjectsByDistrict'])->name('customer.province.get_project');
 
+// Test new page
+
+
+Route::get('newpage', [TestController::class,'index'])->name('newpage');
+Route::post('newpage', [TestController::class,'createPage'])->name('newpage');
+Route::get('create', [TestController::class,'create'])->name('newpage.create');
+Route::get('show/{slug}', [TestController::class,'show'])->name('show');
+Route::get('edit/{slug}', [TestController::class,'edit'])->name('edit');
+Route::post('edit/{slug}', [TestController::class,'postedit'])->name('update');
+Route::get('delete/{slug}', [TestController::class,'delete'])->name('delete');
 // Image upload routes
 Route::post('image/store', [ImageUploadController::class, 'store'])->name('image.store');
 Route::post('image/destroy', [ImageUploadController::class, 'destroy'])->name('image.destroy');
@@ -117,6 +128,8 @@ Route::get('/tin-tuc/{cat_slug}/{post_slug}', [CustomerPostController::class, 's
 Route::get('/lien-he', [ContactController::class, 'showFrontend'])->name('admin.class_request.show_frontend');
 Route::post('/lien-he', [ContactController::class, 'store'])->name('admin.class_request.store');
 
+
+
 Route::get('du-an{search_slug}', [ProjectCustomerController::class, 'index'])->name('customer.project.index');
 Route::get('du-an/{slug}', [ProjectCustomerController::class, 'show'])->name('customer.project.show');
 Route::get('tag/{slug}', [RealtyTagController::class, 'getRealtyByTag'])->name('customer.realty_tag.get_all');
@@ -125,3 +138,4 @@ Route::get('/{search_slug}', [RealtyPostController::class, 'searchByParam'])->na
 Route::get('/v2/{any}', function () {
     return view('app.main');
 });
+
